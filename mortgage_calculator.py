@@ -11,14 +11,14 @@ class Mortgage:
         self.total_amount_to_pay = self.monthly_payment * self.month_for_loan
 
 def set_up_mortgage():#gets the needed data from the user
-    amount_to_borrow = int(input("Please enter the amount you would like to borrow in your mortgage"))
-    interest_rate = int(input("Please enter the current interest rate in the market"))
-    years_to_pay_back_loan = int(input("Please enter how long will your mortgage be in years"))
+    amount_to_borrow = int(input("Please enter the amount you would like to borrow in your mortgage in US dollars\n"))
+    interest_rate = int(input("Please enter the current interest rate in the market in percents\n"))
+    years_to_pay_back_loan = int(input("Please enter how long will your mortgage be in years\n"))
     return Mortgage(years_to_pay_back_loan, amount_to_borrow, interest_rate)
 
 def print_data_to_user(mortgage):#prints the data the user wants for him
-    print("The monthly payment will be ${}".format(mortgage.monthly_payment))
-    print("The total amount of the pay-back will come up to ${}".format(mortgage.total_amount_to_pay))
+    print("The monthly payment will be ${}".format(round(mortgage.monthly_payment,2)))
+    print("The total amount of the pay-back will come up to ${}".format(round(mortgage.total_amount_to_pay, 2)))
     
 mortgage1 = set_up_mortgage()
 print_data_to_user(mortgage1)
